@@ -1,6 +1,7 @@
 package proDemo3.proDemo3.homeControllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 
 
-    @GetMapping("/msg")
-    public String getMessage()
+    @GetMapping("/msg/{name}")
+    public String getMessage(@PathVariable String name)
     {
-        return "Works Now :: works Now";
+        return "Works Now ::::: NAME :: "  + name;
     }
 
 }
